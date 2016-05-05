@@ -1,0 +1,62 @@
+﻿.stickyFooter {
+    position: fixed;
+    bottom: 0px;
+    background-color: lightgray;
+    border-top: solid;
+    padding-top: 15px;
+    min-height: 60px;
+    border-top-color: #333;
+    width: 100%;
+    margin: 0 0 0 0;
+    left: 0;
+}
+
+.tools {
+    margin: 0 10px 0 20px;
+    line-height: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 3rem;
+}
+
+.ico-upload {
+    font-size: 2.5rem;
+}
+
+.drag-drop-container {
+    position: fixed;
+    bottom: 40px;
+    left: 10px;
+    min-width: 98%;
+    background-color: lightgray;
+    border: 1px solid blue;
+}
+
+.upload-result-message {
+    padding: 5px 5px 5px 5px;
+}
+
+.drag-drop-area {
+    border: 2px dashed #333;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 20px 40px 0px 40px;
+    color: #999999;
+    margin:10px;
+}
+
+    .drag-drop-area i {
+        font-size: 4rem;
+        color: #cccccc;
+    }
+
+    .drag-drop-area h3 {
+        font-size: 2.5rem;
+        font-weight: lighter;
+        color: #999;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .drag-drop-area input {
+        margin-bottom:10px;
+    }     

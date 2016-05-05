@@ -1,0 +1,36 @@
+﻿<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div ng-if="uploadPhotos">
+                    <div>
+                        <h4>
+                            <span>{{message}}</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div style="max-height:450px;overflow:auto;overflow-x:hidden;">
+                    <div class="row" ng-repeat="uploadPhoto in uploadPhotos">
+                        <div class="col-md-7" style="padding-top:5px">{{uploadPhoto.fileName}}</div>
+                        <div class="col-md-5">
+                            <div class="alert alert-info upload-result-message" ng-show="uploadPhoto.status==='upload'">
+                                {{uploadPhoto.uploadMessage}}
+                            </div>
+                            <div class="alert alert-success upload-result-message" ng-show="uploadPhoto.status==='uploaded'">
+                                {{uploadPhoto.uploadMessage}}
+                            </div>
+                            <div class="alert alert-danger upload-result-message" ng-show="uploadPhoto.status==='error'">
+                                {{uploadPhoto.uploadMessage}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
