@@ -4,10 +4,10 @@ ngSimpleImageUpload is a Light weight angular directive for uploading images usi
 See demo page over [here](http://ngSimpleImageUpload.azurewebsites.net/demo/index.html)
 
 Features
-* Simple built using jQuery abstracted with angular directive
-* Select all, deselect all items, down arrow key expands, esc collapses. 
-* Light weight compared to what is available over web.
-* Customizable
+* Drag and drop images to upload images
+* Drag drop or select files through HTML Input file type
+* 
+* 
 * .....
 
 ### Version
