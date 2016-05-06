@@ -3,20 +3,20 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-
     <link href="styles/bootstrap.css" rel="stylesheet" />
-    <link href="styles/ngSimpleImageUpload.css" rel="stylesheet" />
     <script src="scripts/jquery-2.2.3.js"></script>
     <script src="scripts/bootstrap.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="app.js"></script>
+    <link href="styles/ngSimpleImageUpload.css" rel="stylesheet" />
     <script src="scripts/ngSimpleImageUpload.min.js"></script>
     <script src="scripts/submitImageService.js"></script>
 </head>
 <body ng-app="ngSimpleImageUploadDemoApp">
     <div ng-controller="ngSimpleImageUploadCtrl">
         <div class="stickyFooter">
-            <ng-simple-image-upload on-photos-selected-for-upload="onImagesSelectedForUpload"></ng-simple-image-upload>
+            <ng-simple-image-upload on-photos-selected-for-upload="onImagesSelectedForUpload">
+            </ng-simple-image-upload>
         </div>
         <div ng-include="'templates/uploadResult.html'"></div>
     </div>

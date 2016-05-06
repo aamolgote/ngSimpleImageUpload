@@ -6,8 +6,7 @@ See demo page over [here](http://ngSimpleImageUpload.azurewebsites.net/demo/inde
 Features
 * Drag and drop images to upload images
 * Drag drop or select files through HTML Input file type
-* 
-* 
+* Customize UI to accomodate app specific drag and drop implementation
 * .....
 
 ### Version
@@ -18,69 +17,28 @@ Manual: download latest from [here](https://github.com/aamolgote/ngSimpleImageUp
 
 ### Using ngSimpleImageUpload
 
-Include jQuery and angular
+Include jQuery, angular and bootstrap (JS and CSS)
 ```html
- <script src="scripts/jquery-2.2.3.js"></script>
- <script src="scripts/angular.js"></script>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <script src="scripts/jquery-2.2.3.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/angular.js"></script>
 ```
-Include ngSimpleImageUpload js file and CSS
+Include ngSimpleImageUpload js file and CSS. Customize CSS as peer your app needs.
 ```html
-<link href="styles/ngSimpleImageUpload.css" rel="stylesheet" />
-<script src="scripts/ngSimpleImageUpload.min.js"></script>
+	<link href="styles/ngSimpleImageUpload.css" rel="stylesheet" />
+    <script src="scripts/ngSimpleImageUpload.min.js"></script>
 ```
 
 Register the 'simpleMultiSelectDropdown' module with main app module.
 ```javascript
-var app = angular.module('ngMultiSelectDropdownDemoApp', ['simpleMultiSelectDropdown']);
+var app = angular.module('ngSimpleImageUploadDemoApp', ['simpleImageUpload']);
 ```
 
 You can use the directive like shown below, 
 ```html
- <ng-simple-multi-select-dropdown 
-       dropdown-items="cities" 
-       tabindex="-1" 
-       display-field="name"
-       show-all="true" 
-       no-items-text="No Cities to select.." 
-       select-text="Select Cities" 
-       all-text="All"
-       max-items-displayed="6"
-       select-all-dropdown-items="selectAllCities" >
-</ng-simple-multi-select-dropdown>
+	<ng-simple-image-upload on-photos-selected-for-upload="onImagesSelectedForUpload">
+    </ng-simple-image-upload>
 ```
- * **dropdown-items** - this is scope item which will array of objects, in the sample it is cities
-	```javascript
-	$scope.cities = [
-				{
-					name: "Los Angeles",
-					code: "LA"
-				},
-				{
-					name: "San Francisco",
-					code: "SFO"
-				}
-			]
-	```
- * **display-field** - This is property within object that needs to be used for displaying text in the drop down.
- * **show-all** - This add All checkbox which will select all items.
- * **no-tems-text** - If the array bound to the drop is empty then this is message which will show in the dropdown text and drop down will not expand.
- * **select-text** - Text which gets displayed by default when not items are selected.
- * **all-text** - Text when all items have been selected.
- * **max-items-displayed** - This is number till which drop down will show comma seperated text of selected items beyond this number it will show # of Items selecyed. For.e.g if it is 3 if we select 1,2, or 3 cities it will show text like this "New York, San Franciso, Chicago", beyond 3 it will show 4 Selected.
- * **select-all-dropdown-items** - scope varibale which will be set to true or false if all items are selected.
-
-    To get selected items, directive appends .selected property to the objects is the array assigned, for in $scope.cities array for city array item it adds .selected attribute with true or false value.
-    ```javascript
-    [
-      {
-        "name": "San Francisco",
-        "code": "SFO",
-        "selected": true
-      },
-      {
-        "name": "New York",
-        "code": "NYC",
-        "selected": true
-      }
-    ]
-    ```
+ * **on-photos-selected-for-upload** - This is callback function which will invoked when upload files are dragged and dropped or selected through HTML Input file type.
+    
