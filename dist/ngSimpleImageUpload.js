@@ -1,4 +1,4 @@
-/*! ng Simple Image Upload - v1.0.0 - 2016-05-05
+/*! ng Simple Image Upload - v1.0.0 - 2016-05-06
 * Copyright (c) 2016 ; Licensed  */
 (function () {
     'use strict';
@@ -19,7 +19,7 @@
                 scope.displayImageUploadArea = function (e) {
                     scope.showImageUploadArea = !scope.showImageUploadArea;
                     if (scope.showImageUploadArea) {
-                        //$document.bind('click', documentClick);
+                        $document.bind('click', documentClick);
                     }
                 }
 
@@ -83,14 +83,14 @@
                     }
                 }
 
-                //function documentClick(e) {
-                //    var target = e.target;
-                //    if (target.id !== "imageUploadIcon"
-                //        && target.id !== "imageUploadButton" && target.id !== "imageUploadFileInput"
-                //        && scope.showImageUploadArea) {
-                //        hideImageUploadArea();
-                //    }
-                //}
+                function documentClick(e) {
+                    var target = e.target;
+                    if (target.parentElement && target.parentElement.id !== "imageUploadIcon"
+                        && target.id !== "imageUploadButton" && target.id !== "imageUploadFileInput"
+                        && scope.showImageUploadArea) {
+                        hideImageUploadArea();
+                    }
+                }
 
                 function hideImageUploadArea() {
                     scope.showImageUploadArea = false;

@@ -17,7 +17,7 @@
                 scope.displayImageUploadArea = function (e) {
                     scope.showImageUploadArea = !scope.showImageUploadArea;
                     if (scope.showImageUploadArea) {
-                        
+                        $document.bind('click', documentClick);
                     }
                 }
 
@@ -78,6 +78,15 @@
                         && scope.showImageUploadArea) {
                         e.stopPropagation();
                         e.preventDefault();
+                    }
+                }
+
+                function documentClick(e) {
+                    var target = e.target;
+                    if (target.parentElement && target.parentElement.id !== "imageUploadIcon"
+                        && target.id !== "imageUploadButton" && target.id !== "imageUploadFileInput"
+                        && scope.showImageUploadArea) {
+                        hideImageUploadArea();
                     }
                 }
 

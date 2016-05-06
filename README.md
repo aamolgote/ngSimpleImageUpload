@@ -7,6 +7,7 @@ Features
 * Drag and drop images to upload images
 * Drag drop or select files through HTML Input file type
 * Customize UI to accomodate app specific drag and drop implementation
+* Demo app leverages bootstrap, but this can be replaced with any other as well e.g. Foundation.
 * .....
 
 ### Version
@@ -41,4 +42,13 @@ You can use the directive like shown below,
     </ng-simple-image-upload>
 ```
  * **on-photos-selected-for-upload** - This is callback function which will invoked when upload files are dragged and dropped or selected through HTML Input file type.
+
+ * **File Upload API** - In demo app submitImageService (submitImageService.js) has simulation of upload API call, it also has the commented code for calling file upload API
+ You can uncomment the commented code and call your own HTTP API and remove the following code snippet
+	```javascript
+		$timeout(function () {
+						deferredData.resolve({StatusCode: 200, Message: "Success"});
+						console.log('Promise resolved through timeout fake service. Uncomment the code from submitImageService and configure your APi call.')
+					}, 3000);
+	```
     
